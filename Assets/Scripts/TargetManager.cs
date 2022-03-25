@@ -18,7 +18,8 @@ public class TargetManager : MonoBehaviour
         targets = new List<IMovingTarget>();
         GameObject targetCoin = GameObject.Instantiate(targetCoinMaster); //create it
         GameObject targetCube = GameObject.Instantiate(targetCubeMaster); //create it
-        GameObject targetSphere = GameObject.Instantiate(targetSphereMaster); 
+        GameObject targetSphere = GameObject.Instantiate(targetSphereMaster);
+        GameObject targetSphere2 = GameObject.Instantiate(targetSphereMaster);
 
         var ss = FindObjectsOfType<MonoBehaviour>().OfType<IMovingTarget>();
         foreach (IMovingTarget s in ss)
