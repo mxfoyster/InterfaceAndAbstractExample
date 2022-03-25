@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereScript : MonoBehaviour, IMovingTarget
+public class SphereScript : AbstractTargetStuff
 {
 
     [SerializeField] private GameObject sphere;
@@ -10,13 +10,17 @@ public class SphereScript : MonoBehaviour, IMovingTarget
     private float degreeCounter;
 
     // Start is called before the first frame update
-    void Start()
+
+
+    public override void Start()
     {
+        base.Start();
+        sphere.transform.position = targetPosition;
         sphereCurrentPosition = sphere.transform.position;
         degreeCounter = 0;
     }
     
-    public void move()
+    public override void move()
     {
         if (degreeCounter < 360) degreeCounter += 0.05f;
         Vector3 sphereNewPosition = sphereCurrentPosition;
